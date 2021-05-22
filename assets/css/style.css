@@ -47,6 +47,12 @@ aside {
     height: 30%;
 }
 
+.top-city-weather h1{
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
 .bottom-city-forcast {
     display: flex;
     flex-direction: row;
@@ -61,6 +67,11 @@ aside {
     max-width: 50px; 
 }
 
+.current-font {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
 /*  ID Blocks   */
 #sideLine {
     height: 4px;
@@ -69,6 +80,12 @@ aside {
     margin-bottom: 8px;
 }
 
-#citySearchButton {
+#citySearchButton,
+#searchBox {
     margin-top: 8px;
+    width: 90%;
+}
+
+#weather-icon {
+    height: 5rem;
 }

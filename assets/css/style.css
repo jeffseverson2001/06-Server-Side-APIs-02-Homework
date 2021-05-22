@@ -7,4 +7,23 @@ header {
     text-align: center;
     background: blue;
     color: #fff;
-  }
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.right-main {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+
+#sideLine {
+    height: 2px;
+    background-color: black;
+    margin: 4px;
+}

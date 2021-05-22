@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
@@ -15,6 +16,9 @@
     </header>
     <main>
         <aside>
+            <input id="searchBox" type="text" placeholder="Atlanta" />
+            <button id="citySearchButton" type="button">Submit</button>
+            <div id="sideLine"></div>
             <ul>
                 <li>Austin</li>
                 <li>Chicago</li>
@@ -26,14 +30,16 @@
                 <li>Atlanta</li>
             </ul>
         </aside>
-        <section>
+        <section class="right-main">
             <div class="top-weather-data"></div>
-
+            <div class="displayedCity"></div>
         </section>
     </main>
     <footer>
         Jeff Severson Week 6 Homework
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.26.0/luxon.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

@@ -16,10 +16,14 @@
     </header>
     <main class="full-height">
         <aside>
-            <input id="searchBox" type="text" placeholder="Atlanta" />
-            <button id="citySearchButton" type="button">Submit</button>
+            <div class="ui-widget">
+                <label for="tags">Tags: </label>
+                <input id="tags">
+                <input id="searchBox" type="text" placeholder="Atlanta" />
+                <button id="citySearchButton" type="button">Submit</button>
+            </div>
             <div id="sideLine"></div>
-                <!-- <li>Austin</li>
+            <!-- <li>Austin</li>
                 <li>Chicago</li>
                 <li>New York</li>
                 <li>Orlando</li>
@@ -38,6 +42,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.26.0/luxon.js"></script>
+    <script src="./assets/js/cities.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

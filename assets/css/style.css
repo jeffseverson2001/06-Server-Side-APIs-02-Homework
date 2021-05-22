@@ -54,6 +54,13 @@ aside {
     width: 100%;
 }
 
+.forcast-box {
+    margin: 8px;
+    background-color: lightslategrey;
+    height: 150px;
+    max-width: 50px; 
+}
+
 /*  ID Blocks   */
 #sideLine {
     height: 4px;

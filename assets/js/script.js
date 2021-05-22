@@ -70,9 +70,19 @@ function seachForCity(searchCity){
     let cityWeather = getCityWeather(weatherAPI);
     let cityForcast = getForcastWeather(weatherForcastAPI);
 
+    searchedCityWeather(cityWeather);
 }
 
 //  Add Elements for top-weather-data
+function searchedCityWeather(cityWeather){
+    $('#sideLine').html("<div></div>");
+    $("#sideLine").attr({
+        "href" : "https://www.w3schools.com/jquery/",
+        "title" : "W3Schools jQuery Tutorial"
+      });
+
+}
+
 //let currentCity = "";
 
 //  Add 5 day forcase elements ????? -- Static elements in HTML page

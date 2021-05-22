@@ -62,14 +62,20 @@ aside {
 
 .forcast-box {
     margin: 8px;
-    background-color: lightslategrey;
-    height: 150px;
-    max-width: 50px; 
+    background-color: slategrey;
+    color: white;
+    height: 250px;
+    width: 200px; 
 }
 
 .current-font {
     font-size: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
+}
+
+.forcast-header {
+    margin-top: 8px;
+    width: 100%;
 }
 
 /*  ID Blocks   */
@@ -88,4 +94,5 @@ aside {
 
 #weather-icon {
     height: 5rem;
+    margin-bottom: 0px;
 }

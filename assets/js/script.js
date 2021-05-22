@@ -1,6 +1,5 @@
 
 //let currentDisplayedCity = $('#displayedCity');
-//let searchButton = $('#citySearchButton').val();
 let searchBox = $('#searchBox').val();
 
 if(searchBox === ""){
@@ -8,16 +7,7 @@ if(searchBox === ""){
     seachForCity(searchBox);
 }
 
-
-
-//console.log("Search Button: " + searchButton);
 console.log("Search Box: " + searchBox);
-
-//let weatherAPI = "https://api.openweathermap.org/data/2.5/weather?q="+searchBox+"&units=imperial&APPID=326a02beef126b1aa5dec68624560327";
-//let weatherZipAPI = "https://api.openweathermap.org/data/2.5/weather?zip=55303,US&units=imperial&appid=326a02beef126b1aa5dec68624560327";
-//let weatherForcastAPI = "https://api.openweathermap.org/data/2.5/forecast?q="+searchBox+"&units=imperial&appid=326a02beef126b1aa5dec68624560327";
-
-//console.log(weatherAPI);
 
 
 //  Fetch City Weather API
@@ -77,12 +67,9 @@ function seachForCity(searchCity){
 
     console.log("City Search: " + searchCity);
 
-    getCityWeather(weatherAPI);
-    getForcastWeather(weatherForcastAPI);
+    let cityWeather = getCityWeather(weatherAPI);
+    let cityForcast = getForcastWeather(weatherForcastAPI);
 
-    //let cityResults = "";
-
-    //return JSON.parse(cityResults);
 }
 
 //  Add Elements for top-weather-data
@@ -92,8 +79,11 @@ function seachForCity(searchCity){
 
 //  Build City List for Search Box --- JQuery UI
 
-//  Search Button Listener
 
+
+
+
+//  Search Button Listener
 $(document).ready(function() {
     $('#citySearchButton').click( function() {
         console.log("Click: " + $('#searchBox').val());

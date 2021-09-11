@@ -45,7 +45,7 @@ async function getCityWeather(searchCity) {
                 "<div class=\"current-font\">Humidity:  " + data.main.humidity + " %</div>",
                 "<div class=\"current-font\">UV Index:  " + data.main.temp + "</div>"
             );
-            //getForcastWeather(searchCity, lon, lat);
+            getForcastWeather(searchCity, lon, lat);
         });
 }
 
@@ -68,21 +68,22 @@ async function getForcastWeather(searchCity, lon, lat) {
             let unixDate = new Date(unixTime * 1000).toLocaleDateString("en-US");
 
         $(".bottom-city-forcast").html("");
+        $("#weather-icon").html("");
 
-        //for (let j = 1; j < 6; j++) {
-            unixTime = data.daily[1].dt;
+        for (let j = 1; j < 6; j++) {
+            unixTime = data.daily[j].dt;
             unixDate = new Date(unixTime * 1000).toLocaleDateString("en-US");
 
-            $("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
-            $(".forcast-box").append("<h2>" + unixDate + "</h2>");
-            $(".forcast-box").append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + data.daily[1].weather[0].icon + ".png\" alt=\"Weather icon\" /> ");
-            $(".forcast-box").append(
-                "<div class=\"forcast-font\">Currently:  " + data.daily[1].weather[0].description + "</div>",
-                "<div class=\"forcast-font\">Temp:  " + data.daily[1].temp.day + " &#8457;</div>",
-                "<div class=\"forcast-font\">Wind:  " + data.daily[1].wind_speed + " MPH</div>",
-                "<div class=\"forcast-font\">Humidity:  " + data.daily[1].humidity + " %</div>"
-            );
-        //}
+                $("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
+                $(".forcast-box").append("<h2>" + unixDate + "</h2>");
+                $(".forcast-box").append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + data.daily[j].weather[0].icon + ".png\" alt=\"Weather icon\" /> ");
+                $(".forcast-box").append(
+                    "<div class=\"forcast-font\">Currently:  " + data.daily[j].weather[0].description + "</div>",
+                    "<div class=\"forcast-font\">Temp:  " + data.daily[j].temp.day + " &#8457;</div>",
+                    "<div class=\"forcast-font\">Wind:  " + data.daily[j].wind_speed + " MPH</div>",
+                    "<div class=\"forcast-font\">Humidity:  " + data.daily[j].humidity + " %</div>"
+                );
+            }
 
 
 

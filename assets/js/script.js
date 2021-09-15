@@ -71,76 +71,20 @@ async function getForcastWeather(searchCity, lon, lat) {
         $("#weather-icon").html("");
 
         for (let j = 1; j < 6; j++) {
+            console.log(data.daily[j]);
             unixTime = data.daily[j].dt;
             unixDate = new Date(unixTime * 1000).toLocaleDateString("en-US");
 
-                $("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
-                $(".forcast-box").append("<h2>" + unixDate + "</h2>");
-                $(".forcast-box").append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + data.daily[j].weather[0].icon + ".png\" alt=\"Weather icon\" /> ");
-                $(".forcast-box").append(
+                $(`<div id=${"forcast-box-" + j} class=\"forcast-box\">`).appendTo(".bottom-city-forcast");
+                $(`#forcast-box-${j}`).append("<h2>" + unixDate + "</h2>");
+                $(`#forcast-box-${j}`).append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + data.daily[j].weather[0].icon + ".png\" alt=\"Weather icon\" /> ");
+                $(`#forcast-box-${j}`).append(
                     "<div class=\"forcast-font\">Currently:  " + data.daily[j].weather[0].description + "</div>",
                     "<div class=\"forcast-font\">Temp:  " + data.daily[j].temp.day + " &#8457;</div>",
                     "<div class=\"forcast-font\">Wind:  " + data.daily[j].wind_speed + " MPH</div>",
                     "<div class=\"forcast-font\">Humidity:  " + data.daily[j].humidity + " %</div>"
                 );
             }
-
-
-
-            /*
-            
-            
-            //console.log(data.coord.lon);
-            //console.log(data.city.name);
-            //console.log(data.list);
-
-            let lastDateCheck = "";
-
-            //var forcastObject = {};
-
-            //$("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
-
-            let forcastArray = [];
-            //let forcastArray = [{date: "dateCheck", icon: data.list[0].weather[0].icon, currently: data.list[0].weather[0].description, temp: data.list[0].main.temp, wind: data.list[0].wind.speed, humidity: data.list[0].main.humidity}];
-            //console.log(forcastArray);
-
-            for (i = 0; i < data.list.length; i++) {
-                let rawDateCheck = data.list[i].dt_txt;
-                let dateCheck = rawDateCheck.substr(0, 10);
-                //console.log(i + " -/-" + lastDateCheck + " -- " + dateCheck)
-                if (dateCheck !== lastDateCheck) {
-                    console.log("HERE" + i);
-                    forcastArray = [{ date: dateCheck, icon: data.list[i].weather[0].icon, currently: data.list[i].weather[0].description, temp: data.list[i].main.temp, wind: data.list[i].wind.speed, humidity: data.list[i].main.humidity }];
-
-                    console.log(forcastArray);
-                    console.log(data.list[i]);
-                    $("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
-                    $(".forcast-box").append("<h2>" + forcastArray[0].date + "</h2>");
-                    $(".forcast-box").append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + forcastArray[0].icon + ".png\" alt=\"Weather icon\" /> ");
-                    $(".forcast-box").append(
-                        "<div class=\"forcast-font\">Currently:  " + forcastArray[0].currently + "</div>",
-                        "<div class=\"forcast-font\">Temp:  " + forcastArray[0].temp + " &#8457;</div>",
-                        "<div class=\"forcast-font\">Wind:  " + forcastArray[0].wind + " MPH</div>",
-                        "<div class=\"forcast-font\">Humidity:  " + forcastArray[0].humidity + " %</div>"
-                    );
-
-                    /*
-                    $("<div class=\"forcast-box\">").appendTo(".bottom-city-forcast");
-                    $(".forcast-box").append("<h2>" + dateCheck + "</h2>");
-                    $(".forcast-box").append("<img id=\"weather-icon\" src=\"https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png\" alt=\"Weather icon\" /> ");
-                    $(".forcast-box").append(
-                        "<div class=\"forcast-font\">Currently:  " + data.list[i].weather[0].description + "</div>",
-                        "<div class=\"forcast-font\">Temp:  " + data.list[i].main.temp + " &#8457;</div>",
-                        "<div class=\"forcast-font\">Wind:  " + data.list[i].wind.speed + " MPH</div>",
-                        "<div class=\"forcast-font\">Humidity:  " + data.list[i].main.humidity + " %</div>"
-                    );
-                    */
-//                }
-//                lastDateCheck = dateCheck;
-//            };
-/*
-            
-*/
         });
 }
 
